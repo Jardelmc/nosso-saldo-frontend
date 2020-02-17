@@ -23,7 +23,7 @@ export default function RouteWrapper({
   }
 
   // Para saber pra onde redirecionar baseado se o usuário está logado ou não
-  const Layout = signed ? DefaultLayout : AuthLayout;
+  const Layout = signed ? AuthLayout : DefaultLayout;
 
   return (
     <Route

@@ -1,12 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 
-import { Wrapper, Content } from './styles';
+import { Wrapper } from './styles';
+import { HeaderComponentSigned } from '../../../components/Header';
+import { ContainerComponent } from '../../../components/Container';
 
 export default function AuthLayout({ children }) {
   return (
     <Wrapper>
-      <Content>{children}</Content>
+      <Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Helmet>
+      <HeaderComponentSigned />
+      <ContainerComponent>{children}</ContainerComponent>
     </Wrapper>
   );
 }
