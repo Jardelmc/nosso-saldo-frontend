@@ -2,7 +2,7 @@
   "name": "nosso-saldo",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jardelmc.github.io/nosso-saldo-frontend",
+  "homepage": "https://jardelmc.github.io/",
   "dependencies": {
     "@rocketseat/unform": "^1.6.1",
     "axios": "^0.19.0",
