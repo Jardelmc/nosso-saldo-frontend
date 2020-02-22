@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/static/js/main.ec51e1f7.chunk.js",
-    "main.js.map": "/static/js/main.ec51e1f7.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/css/2.750837fa.chunk.css": "/static/css/2.750837fa.chunk.css",
-    "static/js/2.bdc8ea17.chunk.js": "/static/js/2.bdc8ea17.chunk.js",
-    "static/js/2.bdc8ea17.chunk.js.map": "/static/js/2.bdc8ea17.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.a911f09b7fbc027d47a3dba13a1328e7.js": "/precache-manifest.a911f09b7fbc027d47a3dba13a1328e7.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.750837fa.chunk.css.map": "/static/css/2.750837fa.chunk.css.map"
+    "main.js": "/nosso-saldo-frontend/static/js/main.c3b9c11a.chunk.js",
+    "main.js.map": "/nosso-saldo-frontend/static/js/main.c3b9c11a.chunk.js.map",
+    "runtime~main.js": "/nosso-saldo-frontend/static/js/runtime~main.ad52aea3.js",
+    "runtime~main.js.map": "/nosso-saldo-frontend/static/js/runtime~main.ad52aea3.js.map",
+    "static/css/2.750837fa.chunk.css": "/nosso-saldo-frontend/static/css/2.750837fa.chunk.css",
+    "static/js/2.61508d54.chunk.js": "/nosso-saldo-frontend/static/js/2.61508d54.chunk.js",
+    "static/js/2.61508d54.chunk.js.map": "/nosso-saldo-frontend/static/js/2.61508d54.chunk.js.map",
+    "index.html": "/nosso-saldo-frontend/index.html",
+    "precache-manifest.a758caf101a4e041d81b9a93cec14e23.js": "/nosso-saldo-frontend/precache-manifest.a758caf101a4e041d81b9a93cec14e23.js",
+    "service-worker.js": "/nosso-saldo-frontend/service-worker.js",
+    "static/css/2.750837fa.chunk.css.map": "/nosso-saldo-frontend/static/css/2.750837fa.chunk.css.map"
   }
 }
