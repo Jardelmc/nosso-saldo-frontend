@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Container } from './styles';
+import { Container } from 'react-bootstrap';
 
 export function ContainerComponent({ children }) {
   return <Container>{children}</Container>;

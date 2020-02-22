@@ -4,10 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as Yup from 'yup';
 
 import { toast } from 'react-toastify';
+import { Form, Button, Badge, Spinner } from 'react-bootstrap';
 import { signInRequest } from '../../store/modules/auth/actions';
-
-import { ContainerComponent } from '../../components/Container';
-import { Content } from './styles';
 
 const schema = Yup.object().shape({
   email: Yup.string().required('Campo email é obrigatório'),
@@ -36,29 +34,56 @@ export default function SignIn() {
 
   return (
     <>
-      {/* <img src={logo} alt="whatsapp-logo" /> */}
-      <ContainerComponent>
-        <Content>
-          <form>
-            <input
-              name="email"
-              type="email"
-              placeholder="Seu email"
-              id="email"
-            />
-            <input
-              name="password"
-              type="password"
-              placeholder="Sua senha"
-              id="password"
-            />
+      <br />
+      <h2>Login</h2>
+      <h5>
+        Nosso-saldo{' '}
+        <Badge pill variant="info">
+          beta
+        </Badge>
+      </h5>
+      <br />
+      <Form>
+        <Form.Group controlId="formBasicEmail">
+          <Form.Label>Email</Form.Label>
+          <Form.Control type="email" placeholder="Seu email" id="email" />
+        </Form.Group>
 
-            <button type="button" onClick={() => handleSubmit()}>
-              {loading ? 'Carregando...' : 'Acessar'}
-            </button>
-          </form>
-        </Content>
-      </ContainerComponent>
+        <Form.Group controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Senha (mínimo 6 caractéres)"
+            id="password"
+          />
+        </Form.Group>
+        <Form.Group controlId="formBasicCheckbox">
+          <Form.Check type="checkbox" label="Manter conectado" id="permanent" />
+        </Form.Group>
+        <br />
+        {!loading ? (
+          <Button
+            variant="primary"
+            type="button"
+            size="lg"
+            block
+            onClick={() => handleSubmit()}
+          >
+            Login
+          </Button>
+        ) : (
+          <Button variant="primary" disabled>
+            <Spinner
+              as="span"
+              animation="grow"
+              size="sm"
+              role="status"
+              aria-hidden="true"
+            />
+            Aguarde...
+          </Button>
+        )}
+      </Form>
     </>
   );
 }
