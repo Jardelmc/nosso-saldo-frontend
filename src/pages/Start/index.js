@@ -140,8 +140,8 @@ export default function Start() {
           maxHeight: '112px',
           background: '#563D7C',
           border: 'solid 1px #ddd',
-          'border-radius': '5px',
-          'padding-top': '5px',
+          borderRadius: '5px',
+          paddingTop: '5px',
         }}
       >
         <Container>
@@ -176,7 +176,7 @@ export default function Start() {
             width: '100%',
             height: '14vh',
             border: 'solid 1px #ddd',
-            'border-radius': '5px',
+            borderRadius: '5px',
             background: '#563D7C',
           }}
         >
@@ -189,7 +189,7 @@ export default function Start() {
                 width: '100%',
                 height: '8vh',
                 border: 'solid 1px #ddd',
-                'border-radius': '5px',
+                borderRadius: '5px',
               }}
             >
               <Row>
@@ -258,7 +258,7 @@ export default function Start() {
               height: '36vh',
               minHeight: '256px',
               border: 'solid 1px #ddd',
-              'border-radius': '5px',
+              borderRadius: '5px',
               background: '#563D7C',
             }}
           >
@@ -268,7 +268,7 @@ export default function Start() {
                   height: '32vh',
                   minHeight: '196px',
                   border: 'solid 1px #ddd',
-                  'border-radius': '5px',
+                  borderRadius: '5px',
                 }}
               >
                 <Container>

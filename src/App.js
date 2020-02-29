@@ -17,7 +17,7 @@ function App() {
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
-        <Router history={history} basename={`${process.env.PUBLIC_URL}/`}>
+        <Router history={history} /* basename={`${process.env.PUBLIC_URL}/`} */>
           <Routes />
           <GlobalStyle />
           <ToastContainer autoClose={3000} />

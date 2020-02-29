@@ -84,8 +84,8 @@ export default function Historic({ match }) {
           maxHeight: '112px',
           background: '#563D7C',
           border: 'solid 1px #ddd',
-          'border-radius': '5px',
-          'padding-top': '5px',
+          borderRadius: '5px',
+          paddingTop: '5px',
         }}
       >
         <Container>

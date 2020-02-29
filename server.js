@@ -1,3 +1,4 @@
+/*
 const express = require('express');
 const expressStaticGzip = require('express-static-gzip');
 const path = require('path');
@@ -18,7 +19,6 @@ app.get('*', function(req, res) {
 
 app.listen(9000);
 
-/*
 const express = require('express');
 const path = require('path');
 const app = express();
