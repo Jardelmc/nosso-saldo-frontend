@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/nosso-saldo-frontend/precache-manifest.a758caf101a4e041d81b9a93cec14e23.js"
+  "/nosso-saldo-frontend/precache-manifest.7c40bb99fafbb21e45fea935af89823c.js"
 );
 
 self.addEventListener('message', (event) => {
