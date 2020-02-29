@@ -8,6 +8,8 @@
     "axios": "^0.19.0",
     "bootstrap": "^4.4.1",
     "date-fns": "^2.0.0-beta.5",
+    "express": "^4.17.1",
+    "express-static-gzip": "^2.0.6",
     "gh-pages": "^2.2.0",
     "history": "^4.10.1",
     "immer": "^4.0.1",

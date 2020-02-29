@@ -15,7 +15,7 @@ import Historic from '../pages/Historic';
 export default function Routes() {
   return (
     <Switch>
-      <Route path="/nosso-saldo-frontend" exact component={Index} />
+      <Route path="/" exact component={Index} />
       <Route path="/login" exact component={SignIn} />
       <Route path="/cadastrar" exact component={SignUp} />
       <Route path="/inicio" exact component={Start} isPrivate />
