@@ -39,15 +39,6 @@ export function HeaderComponentUnsigned() {
             Cadastrar
           </Nav.Link>
         </Nav.Item>
-        <Nav.Item>
-          <Nav.Link
-            style={{ color: '#F8F9FA', fontWeight: 'bold' }}
-            eventKey="disabled"
-            disabled
-          >
-            Sair
-          </Nav.Link>
-        </Nav.Item>
       </DivMenu>
     </Nav>
   );

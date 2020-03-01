@@ -129,6 +129,27 @@ export default function Start() {
     }
   }, [getComboFriends, selectedFriend]);
 
+  const formatValue = useCallback(value => {
+    console.tron.log(value);
+    if (value) {
+      value = String(value);
+      value = value.replace('.', ',');
+      const splittedValue = value.split(',');
+
+      if (splittedValue.length > 1) {
+        const valueReturn =
+          splittedValue[1].length === 2
+            ? `${splittedValue[0]},${splittedValue[1]}`
+            : `${splittedValue[0]},${splittedValue[1]}0`;
+
+        return valueReturn;
+      }
+      return value;
+    }
+
+    return false;
+  }, []);
+
   return (
     <>
       <br />
@@ -216,8 +237,9 @@ export default function Start() {
                         }}
                       >
                         Você deve :{' '}
-                        <Badge variant="success">
-                          {`R$ ${selectedFriend.myBalance}`}
+                        <Badge variant="danger">
+                          {`R$ ${formatValue &&
+                            formatValue(selectedFriend.myBalance)}`}
                         </Badge>
                       </h5>
                     </>
@@ -265,7 +287,7 @@ export default function Start() {
             <Container>
               <div
                 style={{
-                  height: '32vh',
+                  height: 'auto',
                   minHeight: '196px',
                   border: 'solid 1px #ddd',
                   borderRadius: '5px',
@@ -274,17 +296,19 @@ export default function Start() {
                 <Container>
                   <br />
                   <Row>
-                    <Col sm={4} xs={7}>
-                      <h5 style={{ color: '#f8f9fa' }}>Adicionar crédito</h5>
-                    </Col>
+                    <div style={{ display: 'flex' }}>
+                      <Col sm={4} xs={7} /* md={100} lg={100} */>
+                        <h5 style={{ color: '#f8f9fa' }}>Adicionar crédito</h5>
+                      </Col>
 
-                    <Col sm={2} xs={5}>
-                      <Form.Control
-                        type="number"
-                        placeholder="R$ 5,00"
-                        id="cost"
-                      />
-                    </Col>
+                      <Col sm /* xs={5}  */ /*  md={100} lg={100} */>
+                        <Form.Control
+                          type="number"
+                          placeholder="R$ 5,00"
+                          id="cost"
+                        />
+                      </Col>
+                    </div>
 
                     <Col>
                       <br />
@@ -299,6 +323,7 @@ export default function Start() {
                       />
                     </Col>
                   </Row>
+                  <br />
                 </Container>
               </div>
             </Container>
