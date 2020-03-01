@@ -17,6 +17,8 @@ import {
 import api from '../../services/api';
 
 export default function Start() {
+  document.title = 'Nosso Saldo';
+
   const [comboFriends, setComboFriends] = useState(false);
   const [selectedFriend, setSelectedFriend] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -130,7 +132,6 @@ export default function Start() {
   }, [getComboFriends, selectedFriend]);
 
   const formatValue = useCallback(value => {
-    console.tron.log(value);
     if (value) {
       value = String(value);
       value = value.replace('.', ',');
@@ -224,7 +225,8 @@ export default function Start() {
                       >
                         Seu crédito é de: &emsp;&emsp;
                         <Badge variant="success">
-                          {`R$ ${selectedFriend.myBalance}`}
+                          {`R$ ${formatValue &&
+                            formatValue(selectedFriend.myBalance)}`}
                         </Badge>
                       </h5>
                     </>
@@ -253,7 +255,8 @@ export default function Start() {
                       >
                         Saldo equivalente :{' '}
                         <Badge variant="secondary">
-                          {`R$ ${selectedFriend.myBalance}`}
+                          {`R$ ${formatValue &&
+                            formatValue(selectedFriend.myBalance)}`}
                         </Badge>
                       </h5>
                     </>

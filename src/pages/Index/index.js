@@ -5,6 +5,8 @@ import { Container, Card, Figure } from 'react-bootstrap';
 import seubarriga from '../../assets/seubarriga.jpg';
 
 export default function Index() {
+  document.title = 'Nosso Saldo';
+
   return (
     <>
       <Container>

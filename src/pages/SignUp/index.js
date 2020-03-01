@@ -18,6 +18,8 @@ const schema = Yup.object({
 });
 
 export default function SignUp() {
+  document.title = 'Nosso Saldo';
+
   const handleSubmit = useCallback(async () => {
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;

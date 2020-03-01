@@ -9,6 +9,8 @@ import { toast } from 'react-toastify';
 import api from '../../services/api';
 
 export default function Historic({ match }) {
+  document.title = 'Nosso Saldo';
+
   const [comboFriends, setComboFriends] = useState(false);
   const [historicData, setHistoricData] = useState(false);
 

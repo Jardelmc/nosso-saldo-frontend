@@ -15,6 +15,8 @@ const schema = Yup.object().shape({
 });
 
 export default function SignIn() {
+  document.title = 'Nosso Saldo';
+
   const dispatch = useDispatch();
   const loading = useSelector(state => state.auth.loading);
 

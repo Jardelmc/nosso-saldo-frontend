@@ -5,6 +5,8 @@ import { toast } from 'react-toastify';
 import api from '../../services/api';
 
 export default function Users() {
+  document.title = 'Nosso Saldo';
+
   const [solicitations, setSolicitations] = useState(false);
   const [loading, setLoading] = useState(false);
 
