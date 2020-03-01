@@ -39,7 +39,10 @@ export default function Index() {
         <br />
 
         <Card border="success" body>
-          Pronto, vocês já podem controlar seus gastos!
+          Pronto, vocês já podem controlar seus gastos! <br /> <br />
+          Exemplo: Se você pagou a viagem de uber sozinho e a corrida deu R$
+          20,00. Acidione R$ 10,00 de créditos para você em relação ao seu
+          amigo.
         </Card>
 
         <br />

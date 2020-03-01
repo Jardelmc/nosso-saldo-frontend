@@ -116,7 +116,8 @@ export default function Start() {
       if (response.data.message) {
         setLoading(false);
         toast.success(response.data.message);
-        getComboFriends();
+        setComboFriends(false);
+        setSelectedFriend(false);
 
         return;
       }
@@ -129,9 +130,12 @@ export default function Start() {
       toast.error('Erro ao salvar movimentação');
       setLoading(false);
     }
-  }, [getComboFriends, selectedFriend]);
+  }, [selectedFriend]);
 
   const formatValue = useCallback(value => {
+    if (value === 0) {
+      return `${value},00`;
+    }
     if (value) {
       value = String(value);
       value = value.replace('.', ',');
@@ -145,7 +149,7 @@ export default function Start() {
 
         return valueReturn;
       }
-      return value;
+      return `${value},00`;
     }
 
     return false;

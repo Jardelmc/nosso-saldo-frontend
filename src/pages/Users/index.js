@@ -1,6 +1,6 @@
 import React, { useCallback, useState, useEffect } from 'react';
 
-import { Container, Form, Button, Spinner, Table } from 'react-bootstrap';
+import { Container, Form, Button, Spinner, Table, Card } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 import api from '../../services/api';
 
@@ -144,22 +144,23 @@ export default function Users() {
             />
           </Form.Group>
           <br />
-          {!loading ? (
-            <Button variant="success" onClick={() => handleInvite()} block>
-              Convidar
-            </Button>
-          ) : (
-            <Button variant="success">
-              {' '}
-              <Spinner animation="grow" />
-            </Button>
-          )}
         </Container>
 
+        {!loading ? (
+          <Button variant="success" onClick={() => handleInvite()} block>
+            Convidar
+          </Button>
+        ) : (
+          <Button variant="success">
+            {' '}
+            <Spinner animation="grow" />
+          </Button>
+        )}
+
         <br />
         <br />
 
-        {solicitations && (
+        {solicitations ? (
           <Table striped bordered hover responsive size="sm">
             <thead style={{ background: '#563D7C', borderRadius: '5px' }}>
               <th style={{ color: '#F8F9FA' }}>Nome</th>
@@ -206,6 +207,16 @@ export default function Users() {
                 ))}
             </tbody>
           </Table>
+        ) : (
+          <>
+            <br />
+            <Card bg="secondary" text="white" style={{ width: '100%' }}>
+              <Card.Header>Solicitações:</Card.Header>
+              <Card.Body>
+                <Card.Title>Nenhuma nova solicitação</Card.Title>
+              </Card.Body>
+            </Card>
+          </>
         )}
       </div>
     </>
