@@ -1,15 +1,20 @@
+/* eslint-disable consistent-return */
 /* eslint-disable no-empty */
 /* eslint-disable react/forbid-prop-types */
 import React, { useCallback, useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { Container, Form, Table } from 'react-bootstrap';
 import { toast } from 'react-toastify';
+import { Scroll } from './styles';
 
 import api from '../../services/api';
 
 export default function Historic({ match }) {
   document.title = 'Nosso Saldo';
+
+  const { email } = useSelector(state => state.auth);
 
   const [comboFriends, setComboFriends] = useState(false);
   const [historicData, setHistoricData] = useState(false);
@@ -75,6 +80,27 @@ export default function Historic({ match }) {
     }
   });
 
+  const formatName = useCallback(name => {
+    if (name) {
+      const formattedName = name.split(' ')[0];
+
+      return formattedName.charAt(0).toUpperCase() + formattedName.slice(1);
+    }
+  }, []);
+
+  const colorOfCoastLabel = useCallback(
+    ownerBalanceEmail => {
+      if (ownerBalanceEmail && email) {
+        if (ownerBalanceEmail === email) {
+          return '#5cb85c';
+        }
+        return '#d9534f';
+      }
+      return '#292b2c';
+    },
+    [email]
+  );
+
   return (
     <>
       <br />
@@ -111,42 +137,75 @@ export default function Historic({ match }) {
         </Container>
 
         <br />
-
-        <Container>
-          <Table responsive>
-            <thead>
-              <tr>
-                <th>Valor</th>
-                <th>Criado por</th>
-                <th>Data</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              {historicData &&
-                historicData.map(element => (
-                  <>
-                    <tr>
-                      <td>R$ {element.cost}</td>
-                      <td>{element.createdBy}</td>
-                      <td>{element.date}</td>
-                    </tr>
-
-                    <tr style={{ background: '#fff' }}>
-                      <td colSpan="3" style={{ borderRadius: '5px' }}>
-                        {element.message}
-                      </td>
-                    </tr>
-                    <br />
-                    <br />
-                  </>
-                ))}
-            </tbody>
-          </Table>
-        </Container>
       </div>
 
-      <br />
+      <Scroll>
+        <Table responsive bordered striped>
+          <thead>
+            <tr
+              style={{
+                color: '#fff',
+                tableLayout: 'fixed',
+                background: '#563D7C',
+              }}
+            >
+              <th>Valor</th>
+              <th>Criado por</th>
+              <th>Data</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {historicData &&
+              historicData.map(element => (
+                <>
+                  <tr>
+                    <td>
+                      <strong
+                        style={{
+                          color: `${colorOfCoastLabel(element.createdByEmail)}`,
+                        }}
+                      >
+                        R$ {element.cost}
+                      </strong>
+                    </td>
+                    <td>{formatName(element.createdBy)}</td>
+                    <td>{element.date}</td>
+                  </tr>
+
+                  <tr style={{ background: '#fff' }}>
+                    <td colSpan="3" style={{ borderRadius: '5px' }}>
+                      <strong style={{ color: '#563D7C' }}>Mensagem:</strong>
+                      <br />
+                      {element.message}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <div
+                      style={{
+                        height: '3px',
+                        background: `${colorOfCoastLabel(
+                          element.createdByEmail
+                        )}`,
+                      }}
+                    />
+                  </tr>
+                  <tr>
+                    <div
+                      style={{
+                        height: '3px',
+                        background: `${colorOfCoastLabel(
+                          element.createdByEmail
+                        )}`,
+                      }}
+                    />
+                  </tr>
+                </>
+              ))}
+          </tbody>
+        </Table>
+      </Scroll>
     </>
   );
 }

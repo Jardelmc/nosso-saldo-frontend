@@ -15,6 +15,7 @@ import {
 } from 'react-bootstrap';
 
 import api from '../../services/api';
+import history from '../../services/history';
 
 export default function Start() {
   document.title = 'Nosso Saldo';
@@ -39,6 +40,7 @@ export default function Start() {
 
     if (empty) {
       toast.info('Convide algum usuário para iniciar');
+      history.push('/usuarios');
     }
 
     if (formattedData) {
@@ -77,6 +79,13 @@ export default function Start() {
 
       if (!Number(cost)) {
         toast.error('O valor precisa ser informado. Exemplo: 5.00');
+        setLoading(false);
+        return;
+      }
+
+      if (Number(cost) < 0) {
+        toast.error('Apenas valor positivo é permitido');
+        document.getElementById('cost').value = '';
         setLoading(false);
         return;
       }
@@ -257,7 +266,7 @@ export default function Start() {
                           color: '#F8F9FA',
                         }}
                       >
-                        Saldo equivalente :{' '}
+                        Ninguém deve ninguém :{' '}
                         <Badge variant="secondary">
                           {`R$ ${formatValue &&
                             formatValue(selectedFriend.myBalance)}`}

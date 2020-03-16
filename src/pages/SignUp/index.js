@@ -1,8 +1,12 @@
 import React, { useCallback } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { Form, Button, Badge } from 'react-bootstrap';
 import * as Yup from 'yup';
 import { toast } from 'react-toastify';
+
+import { signInRequest } from '../../store/modules/auth/actions';
+
 import api from '../../services/api';
 
 const schema = Yup.object({
@@ -19,6 +23,8 @@ const schema = Yup.object({
 
 export default function SignUp() {
   document.title = 'Nosso Saldo';
+
+  const dispatch = useDispatch();
 
   const handleSubmit = useCallback(async () => {
     const name = document.getElementById('name').value;
@@ -38,6 +44,7 @@ export default function SignUp() {
 
           if (message) {
             toast.success(message);
+            dispatch(signInRequest(email, password));
             return;
           }
           if (err) {
@@ -59,7 +66,7 @@ export default function SignUp() {
       .catch(() =>
         toast.error('Informe um e-mail válido e uma senha de mínimo 6 dígitos')
       );
-  }, []);
+  }, [dispatch]);
 
   return (
     <>

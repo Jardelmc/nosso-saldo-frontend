@@ -115,7 +115,7 @@ export default function Users() {
 
   useEffect(() => {
     getSolicitations();
-  });
+  }, [getSolicitations]);
 
   return (
     <>
