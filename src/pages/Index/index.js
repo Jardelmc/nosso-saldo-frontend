@@ -26,23 +26,27 @@ export default function Index() {
         <br />
 
         <Card border="success" body>
-          1º Cadastre-se com seu e-mail
+          <strong>1º Cadastre-se com seu e-mail</strong>
         </Card>
 
         <br />
 
         <Card border="success" body>
-          2º Envie um convite para um amigo e peça para ele aceitar a
-          solicitação
+          <strong>
+            2º Envie um convite para um amigo e peça para ele aceitar a
+            solicitação
+          </strong>
         </Card>
 
         <br />
 
         <Card border="success" body>
-          Pronto, vocês já podem controlar seus gastos! <br /> <br />
-          Exemplo: Se você pagou a viagem de uber sozinho e a corrida deu R$
-          20,00. Acidione R$ 10,00 de créditos para você em relação ao seu
-          amigo.
+          <strong>
+            Pronto, vocês já podem controlar seus gastos! <br /> <br />
+            Exemplo: Se você pagou a viagem de uber sozinho e a corrida deu R$
+            20,00. Acidione R$ 10,00 de créditos para você em relação ao seu
+            amigo.
+          </strong>
         </Card>
 
         <br />
@@ -53,10 +57,10 @@ export default function Index() {
               style={{
                 borderRadius: '5px',
                 position: 'absolute',
-                left: '43%',
+                left: '33%',
               }}
-              width={56}
-              height={56}
+              width={128}
+              height={128}
               alt="Seu Barriga cobrando dinheiro"
               src={seubarriga}
             />

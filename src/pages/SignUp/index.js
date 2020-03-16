@@ -30,6 +30,14 @@ export default function SignUp() {
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
+    const passwordConfirm = document.getElementById('passwordConfirm').value;
+
+    if (password !== passwordConfirm) {
+      toast.error('As senhas não são iguais');
+      document.getElementById('password').value = '';
+      document.getElementById('passwordConfirm').value = '';
+      return;
+    }
 
     const apiCall = {
       async create() {
@@ -94,13 +102,23 @@ export default function SignUp() {
         </Form.Group>
 
         <Form.Group controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+          <Form.Label>Senha</Form.Label>
           <Form.Control
             type="password"
             placeholder="Senha (mínimo 6 caractéres)"
             id="password"
           />
         </Form.Group>
+
+        <Form.Group controlId="formBasicPassword">
+          <Form.Label>Repia a Senha</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Repita a senha para confirmar"
+            id="passwordConfirm"
+          />
+        </Form.Group>
+
         <Form.Group controlId="formBasicCheckbox">
           <Form.Check
             type="checkbox"

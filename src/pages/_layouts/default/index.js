@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 import { Wrapper, Responsive, MasterResponsive } from './styles';
 import { HeaderComponentUnsigned } from '../../../components/Header';
 import { ContainerComponent } from '../../../components/Container';
+import Footer from '../../../components/Footer';
 
 export default function DefaultLayout({ children }) {
   return (
@@ -17,6 +18,7 @@ export default function DefaultLayout({ children }) {
         <Responsive>
           <ContainerComponent>{children}</ContainerComponent>
         </Responsive>
+        <Footer />
       </MasterResponsive>
     </Wrapper>
   );
